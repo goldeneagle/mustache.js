@@ -173,10 +173,10 @@ var Mustache = function() {
         } else if (type === "#") { // normal section
           if (that.is_array(value)) { // Enumerable, Let's loop!
             renderedContent = that.map(value, function(row) {
-              return that.render(content, that.create_context(row), partials, true);
+              return that.render(content, that.create_context(row, context), partials, true);
             }).join("");
           } else if (that.is_object(value)) { // Object, Use it as subcontext!
-            renderedContent = that.render(content, that.create_context(value),
+            renderedContent = that.render(content, that.create_context(value, context),
               partials, true);
           } else if (typeof value === "function") {
             // higher order section
@@ -184,7 +184,7 @@ var Mustache = function() {
               return that.render(text, context, partials, true);
             });
           } else if (value) { // boolean section
-            renderedContent = that.render(content, context, partials, true);
+            renderedContent = that.render(content, that.create_context(value, context), partials, true);
           } else {
             renderedContent = "";
           }
