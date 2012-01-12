@@ -4,6 +4,11 @@
   See http://mustache.github.com/ for more info.
 */
 
+/**
+ * @class
+ * @property {function} to_html render template to html
+ *
+ */
 var Mustache = function() {
   var Renderer = function() {};
 
