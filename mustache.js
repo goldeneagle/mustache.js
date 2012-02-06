@@ -5,7 +5,7 @@
 */
 
 /**
- * @class
+ * @class Mustache
  * @property {function} to_html render template to html
  *
  */
