@@ -230,7 +230,7 @@ var Mustache = function() {
         name = path[i];
         if(value && is_kinda_truthy(value[name])) {
           value = value[name];
-        } else if ((i == 0) && value.__parent_context) {
+        } else if ((i == 0)  && (value[name] === undefined) && value.__parent_context) {
           i--; // fix the loop thingie
           value = value.__parent_context;
         } else {
