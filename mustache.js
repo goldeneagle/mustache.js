@@ -238,9 +238,6 @@ var Mustache = function() {
         }
       }
 
-      if(typeof value === "function") {
-        return value.apply(context);
-      }
       if(value !== undefined) {
         return value;
       }
